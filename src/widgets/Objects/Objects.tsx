@@ -68,7 +68,6 @@ const Objects = () => {
   const [category, setCategory] = useState<string[]>([]);
   const [dropdown, setDropdown] = useState<boolean>(false);
   const [switcher, setSwitcher] = useState<boolean>(false);
-  const [minFloor, setMinFloor] = useState<number>(1);
   const [maxFloor, setMaxFloor] = useState<number>(30);
 
   const handleClick = (title: string) => {
@@ -84,11 +83,11 @@ const Objects = () => {
       const locationMatch =
         location === "Выберите локацию" || obj.location === location;
       const categoryMatch = !category.length || category.includes(obj.category);
-      const floorMatch = obj.floors >= minFloor && obj.floors <= maxFloor;
+      const floorMatch = obj.floors >= 1 && obj.floors <= maxFloor;
 
       return statusMatch && locationMatch && categoryMatch && floorMatch;
     });
-  }, [objects, status, location, category, minFloor, maxFloor]);
+  }, [objects, status, location, category, maxFloor]);
 
   return (
     <div id={scss.Objects}>
@@ -178,7 +177,7 @@ const Objects = () => {
             <div className={scss.range}>
               <div className={scss.rangeLabels}>
                 <span>
-                  <span className={scss.rangePrefix}>от</span> {minFloor} этажей
+                  <span className={scss.rangePrefix}>от</span> 1 этажей
                 </span>
                 <span className={scss.rangeDash}>—</span>
                 <span>
