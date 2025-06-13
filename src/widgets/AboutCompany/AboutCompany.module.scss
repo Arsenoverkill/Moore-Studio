@@ -1,0 +1,107 @@
+#AboutCompany {
+  margin-right: clamp(0rem, -1.064rem + 3.4vw, 2rem);
+  .content {
+    position: relative;
+    h1 {
+      font-size: clamp(1.1rem, 0.643rem + 2.29vw, 2.7rem);
+      text-align: end;
+      font-weight: 400;
+      text-transform: uppercase;
+      span {
+        color: var(--main-color);
+      }
+    }
+    .textPosition {
+      position: absolute;
+      text-align: start;
+      right: 3rem;
+    }
+    .about {
+      display: flex;
+      justify-content: space-between;
+      gap: clamp(1rem, 0.143rem + 4.29vw, 4rem);
+      margin-top: clamp(6.5rem, 5.786rem + 3.57vw, 9rem);
+      .aboutText {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+        .aboutImg {
+          .img2 {
+            display: none;
+          }
+        }
+        .img1 {
+          width: clamp(5.5rem, 2.786rem + 13.57vw, 15rem);
+          height: clamp(6.5rem, 2.643rem + 19.29vw, 20rem);
+          margin-top: 0.5rem;
+        }
+        .text {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          position: relative;
+          margin-top: 2rem;
+
+          img {
+            width: clamp(3rem, 2.714rem + 1.43vw, 4rem);
+            height: clamp(3rem, 2.714rem + 1.43vw, 4rem);
+            position: absolute;
+            top: clamp(-1.4rem, -1.229rem + -0.86vw, -2rem);
+          }
+          p {
+            font-size: clamp(0.8rem, 0.743rem + 0.29vw, 1rem);
+            color: #222222;
+            line-height: clamp(1.5rem, 1.357rem + 0.71vw, 2rem);
+            margin-top: 0.3rem;
+            @media (max-width: 500px) {
+              margin-top: 0;
+            }
+            span {
+              text-transform: uppercase;
+              margin-left: clamp(2.2rem, 1.971rem + 1.14vw, 3rem);
+            }
+          }
+        }
+      }
+      .img2 {
+        width: clamp(30rem, 7.079rem + 47.69vw, 50rem);
+        height: clamp(30rem, -4.382rem + 71.54vw, 60rem);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #AboutCompany {
+    .content {
+      h1 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: clamp(17rem, 4.143rem + 64.29vw, 35rem);
+        margin-left: 3rem;
+      }
+      .textPosition {
+        left: 0;
+      }
+      .about {
+        .aboutText {
+          .aboutImg {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.5rem;
+            .img2 {
+              display: block;
+              width: clamp(12rem, -0.857rem + 64.29vw, 30rem);
+              height: clamp(15rem, 0.714rem + 71.43vw, 35rem);
+            }
+          }
+        }
+        .img2 {
+          display: none;
+        }
+      }
+    }
+  }
+}

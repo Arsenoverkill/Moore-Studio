@@ -1,0 +1,61 @@
+.pulseWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(2rem, 1.429rem + 2.86vw, 4rem);
+  button {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(0.6rem, 0.514rem + 0.43vw, 0.9rem);
+    color: white;
+    text-transform: uppercase;
+    background-color: var(--main-color);
+    width: clamp(6rem, 5.143rem + 4.29vw, 9rem);
+    height: clamp(6rem, 5.143rem + 4.29vw, 9rem);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  .pulse {
+    position: absolute;
+    width: clamp(6.5rem, 5.643rem + 4.29vw, 9.5rem);
+    height: clamp(6.5rem, 5.643rem + 4.29vw, 9.5rem);
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+    animation: pulseAnim 2s infinite;
+    z-index: 1;
+  }
+
+  .pulse:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .pulse:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+
+  .pulse:nth-child(3) {
+    animation-delay: 1s;
+  }
+
+  .pulse:nth-child(4) {
+    animation-delay: 1.5s;
+  }
+}
+
+@keyframes pulseAnim {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.5;
+  }
+  100% {
+    width: clamp(8rem, 6.571rem + 7.14vw, 13rem);
+    height: clamp(8rem, 6.571rem + 7.14vw, 13rem);
+    opacity: 0;
+  }
+}
